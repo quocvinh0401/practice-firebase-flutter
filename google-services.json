@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "638570694656",
+    "project_id": "practice-firebase-abdb0",
+    "storage_bucket": "practice-firebase-abdb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638570694656:android:d4b158a043992c0ae6b0e5",
+        "android_client_info": {
+          "package_name": "com.company.practice_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638570694656-aoqsmglephnjrb40l4ht4uckfeg3iv6r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.company.practice_firebase",
+            "certificate_hash": "69425e532f5b837fe380347442726a71c99c2c91"
+          }
+        },
+        {
+          "client_id": "638570694656-ak67fcnl5brb7mhpet522jf0l94ellqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoTmVXJcGp1l8OQhC_NEX8tgKfL7OAYNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638570694656-8qbr7bm1989jm19d94annkm7d5oc9des.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "638570694656-hhb44spi49m123ggkc3k2f1shtl6nr8s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.practiceFirebase"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638570694656:android:ac77fb0b78b5268be6b0e5",
+        "android_client_info": {
+          "package_name": "com.example.practice_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "638570694656-hcmn9q4g66k2nji9j8ejjhr60ere1f3t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.practice_firebase",
+            "certificate_hash": "69425e532f5b837fe380347442726a71c99c2c91"
+          }
+        },
+        {
+          "client_id": "638570694656-ak67fcnl5brb7mhpet522jf0l94ellqf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoTmVXJcGp1l8OQhC_NEX8tgKfL7OAYNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "638570694656-8qbr7bm1989jm19d94annkm7d5oc9des.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "638570694656-hhb44spi49m123ggkc3k2f1shtl6nr8s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.practiceFirebase"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
