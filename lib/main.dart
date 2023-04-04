@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:practice_firebase/screens/register_screen.dart';
 
 
 import 'package:practice_firebase/screens/screen.dart';
@@ -24,7 +25,8 @@ class SocialApp extends StatelessWidget {
       initialRoute: '/login',
       routes: {
         '/': (context) => const HomeScreen(),
-        '/login': (context) => const LoginScreen()
+        '/login': (context) => const LoginScreen(),
+        '/register': (context) => const RegisterScreen()
       },
     );
   }

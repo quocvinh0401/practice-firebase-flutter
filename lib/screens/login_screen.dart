@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:practice_firebase/models/user_model.dart';
 import 'package:practice_firebase/presenters/login_presenter.dart';
 import 'package:practice_firebase/views/login_view.dart';
+import 'package:practice_firebase/data/firebase.dart';
+import 'package:practice_firebase/core/core.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -12,13 +15,18 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> implements LoginView {
   LoginPresenter? _presenter;
+  Navigate? _navigate;
   bool _obscureText = true;
+
+  final FirebaseService _firebaseService = FirebaseService();
 
   @override
   void initState() {
     super.initState();
     _presenter = LoginPresenter();
     _presenter!.attachView(this);
+
+    _navigate = Navigate(context: context);
   }
 
   @override
@@ -107,7 +115,10 @@ class _LoginScreenState extends State<LoginScreen> implements LoginView {
                     children: [
                       Expanded(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () async {
+                            final user = await _firebaseService.getUsers();
+                            print(user);
+                          },
                           style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(vertical: 15),
                               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
@@ -171,7 +182,9 @@ class _LoginScreenState extends State<LoginScreen> implements LoginView {
                                 'assets/images/google.png',
                                 height: 25,
                               ),
-                              const SizedBox(width: 10,),
+                              const SizedBox(
+                                width: 10,
+                              ),
                               const Text(
                                 'Login with Google',
                                 style: TextStyle(color: Colors.grey),
@@ -185,20 +198,26 @@ class _LoginScreenState extends State<LoginScreen> implements LoginView {
                   const SizedBox(
                     height: 20,
                   ),
-                  RichText(
-                    text: const TextSpan(
-                      text: 'Don\'t have an account? ',
-                      style: TextStyle(color: Colors.grey),
-                      children: [
-                        TextSpan(
-                          text: 'Sign up',
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Don\'t have an account?',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/register');
+                        },
+                        child: const Text(
+                          'Sign up',
                           style: TextStyle(
                             color: Colors.lightBlue,
                             fontWeight: FontWeight.w600,
                           ),
                         ),
-                      ],
-                    ),
+                      )
+                    ],
                   )
                 ],
               ),
@@ -210,7 +229,12 @@ class _LoginScreenState extends State<LoginScreen> implements LoginView {
   }
 
   @override
-  void onSignInWithGoogle(user) {
-    print('user-------->>>$user');
+  void onSignInWithGoogleError(error) {
+
+  }
+
+  @override
+  void onSignInWithGoogleSuccess(UserModel user) {
+    _navigate!.goToHome();
   }
 }
